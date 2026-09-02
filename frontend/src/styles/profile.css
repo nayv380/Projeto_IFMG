@@ -1,0 +1,146 @@
+.profile-page {
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  /* No forzar altura 100% → el card se ajusta al contenido */
+}
+
+.profile-page .lt-page-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.profile-page .card-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow: visible;
+}
+
+.profile-page .card-header {
+  padding: 1rem 1.1rem 0.35rem;
+}
+
+.profile-page .card-body {
+  padding: 0.35rem 1.1rem 0.75rem;
+  flex: none;
+  overflow: visible;
+}
+
+.profile-page .card-footer {
+  padding: 0.75rem 1.1rem 1rem;
+  border-top: 1px solid var(--lt-border);
+}
+
+.profile-page .card-footer .lt-actions {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lt-yellow), var(--lt-red) 55%, var(--lt-green));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-hero-text h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.1rem;
+}
+
+.profile-hero-text p {
+  margin: 0;
+  color: var(--lt-text-muted);
+  font-size: 0.8rem;
+}
+
+.profile-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.profile-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--lt-border);
+  font-size: 0.88rem;
+}
+
+.profile-field:last-child {
+  border-bottom: none;
+}
+
+.profile-field dt {
+  color: var(--lt-text-muted);
+  font-weight: 600;
+  margin: 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.profile-field dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+  word-break: break-word;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.profile-form .input-element {
+  min-height: 40px;
+  font-size: 0.9rem;
+}
+
+.profile-form .input-label {
+  font-size: 0.8rem;
+}
+
+.profile-status {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--lt-radius-sm);
+  font-size: 0.8rem;
+}
+
+.profile-status.is-error {
+  background: var(--lt-danger-bg);
+  color: var(--lt-red-dark);
+}
+
+.profile-status.is-ok {
+  background: var(--lt-success-bg);
+  color: var(--lt-green-dark);
+}
+
+.profile-page .card-footer .btn-global {
+  min-height: 38px;
+  font-size: 0.88rem;
+}

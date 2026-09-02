@@ -1,0 +1,39 @@
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--lt-radius-pill);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status-chip-icon {
+  flex-shrink: 0;
+}
+
+/* Neutro — aguardando envio */
+.status-chip-neutral {
+  background: var(--lt-border);
+  color: var(--lt-text-muted);
+}
+
+/* Pendente — prazo correndo / em correção */
+.status-chip-pending {
+  background: rgba(245, 197, 24, 0.22);
+  color: #8a6d00;
+}
+
+/* Sucesso — entregue / corrigido com nota */
+.status-chip-success {
+  background: var(--lt-success-bg);
+  color: var(--lt-success-hover, var(--lt-green-dark));
+}
+
+/* Perigo — prazo encerrado sem envio */
+.status-chip-danger {
+  background: var(--lt-danger-bg);
+  color: var(--lt-red-dark);
+}

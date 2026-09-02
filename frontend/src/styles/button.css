@@ -1,0 +1,88 @@
+.btn-global {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--lt-radius-pill);
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.btn-global:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-global:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* CTA principal — amarillo LATINATON */
+.btn-primary {
+  background-color: var(--lt-yellow);
+  color: var(--lt-text);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--lt-yellow-hover);
+}
+
+/* Secundario — borde */
+.btn-secondary {
+  background-color: var(--lt-surface);
+  color: var(--lt-text);
+  border: 1.5px solid var(--lt-border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--lt-text-muted);
+  background-color: #faf9f6;
+}
+
+/* Ghost / nav */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--lt-text-muted);
+  border-radius: var(--lt-radius-sm);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--lt-text);
+}
+
+/* Peligro / logout */
+.btn-danger {
+  background-color: var(--lt-red);
+  color: #fff;
+  border-radius: var(--lt-radius-pill);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: var(--lt-red-dark);
+}
+
+@media (min-width: 768px) {
+  .btn-global {
+    min-height: 42px;
+    padding: 0 18px;
+    font-size: 14px;
+  }
+}

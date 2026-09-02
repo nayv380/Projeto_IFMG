@@ -1,0 +1,130 @@
+.notif-bell {
+  position: relative;
+  display: inline-flex;
+}
+
+.notif-bell-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--lt-text);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.notif-bell-trigger:hover,
+.notif-bell-trigger[aria-expanded='true'] {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.notif-bell-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: var(--lt-radius-pill);
+  background: var(--lt-red);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+.notif-bell-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: min(320px, calc(100vw - 2rem));
+  max-height: min(360px, 70vh);
+  background: var(--lt-surface);
+  border: 1px solid var(--lt-border);
+  border-radius: var(--lt-radius);
+  box-shadow: var(--lt-shadow);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: notifIn 0.14s ease;
+}
+
+.notif-bell-header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--lt-border);
+  font-size: 0.9rem;
+}
+
+.notif-bell-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.notif-bell-empty {
+  margin: 0;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  color: var(--lt-text-muted);
+  font-size: 0.85rem;
+}
+
+.notif-bell-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-bottom: 1px solid var(--lt-border);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--lt-text);
+}
+
+.notif-bell-item:last-child {
+  border-bottom: none;
+}
+
+.notif-bell-item:hover {
+  background: rgba(245, 197, 24, 0.12);
+}
+
+.notif-bell-item.is-unread {
+  background: rgba(0, 153, 68, 0.06);
+}
+
+.notif-bell-item-msg {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.notif-bell-item.is-unread .notif-bell-item-msg {
+  font-weight: 700;
+}
+
+.notif-bell-item-meta {
+  font-size: 0.72rem;
+  color: var(--lt-text-muted);
+}
+
+@keyframes notifIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

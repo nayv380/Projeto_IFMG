@@ -1,0 +1,196 @@
+/* landingpage.css */
+
+/* Comportamento de rolagem suave ao clicar nos links do menu */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================
+   1. CONTAINER PRINCIPAL (Mobile First)
+   ========================================= */
+.landing-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* =========================================
+   2. NAVBAR (Apenas Mobile)
+   ========================================= */
+.landing-navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #ffffff;
+  /* A Navbar precisa de sombra ou borda para destacar do conteúdo rolando por baixo */
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.05); 
+}
+
+/* Menu Oculto no Mobile (Toggle) */
+.landing-mobile-menu {
+  position: fixed;
+  top: 60px; /* Fica exatamente abaixo da NavBar (ajuste conforme a altura real) */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: #ffffff;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+}
+
+/* =========================================
+   3. SIDEBAR (Oculta no Mobile)
+   ========================================= */
+.landing-sidebar-wrapper {
+  display: none; 
+}
+
+/* =========================================
+   4. CONTEÚDO PRINCIPAL (Main)
+   ========================================= */
+.landing-content {
+  flex: 1;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+}
+
+/* Links de Navegação (Usados na NavBar/Menu e na SideBar) */
+.landing-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.landing-nav-link {
+  text-decoration: none;
+  color: var(--lt-text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--lt-radius-sm);
+  border-left: 3px solid transparent;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.landing-nav-link:hover {
+  color: var(--lt-text);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.landing-nav-link.is-active {
+  color: var(--lt-text);
+  font-weight: 700;
+}
+
+/* O desafio → amarillo (seção Inove) */
+.landing-nav-link--solucoes.is-active {
+  background: var(--lt-yellow);
+  border-left-color: var(--lt-yellow-hover);
+  color: var(--lt-text);
+}
+
+/* Comunidade → vermelho (Trabalho em equipe) */
+.landing-nav-link--comunidade.is-active {
+  background: var(--lt-red);
+  border-left-color: var(--lt-red-dark);
+  color: #fff;
+}
+
+/* Sobre → verde (Do zero ao protótipo) */
+.landing-nav-link--sobre.is-active {
+  background: var(--lt-green);
+  border-left-color: var(--lt-green-dark);
+  color: #fff;
+}
+
+/* Seções para as Imagens/Conteúdo com "Roll" */
+.landing-section {
+  min-height: 100vh; /* Garante que cada imagem ocupe pelo menos a tela toda */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;
+  background-color: #f3f4f6;
+  background-size: cover;
+  background-position: center;
+  color: #111827;
+  font-size: 24px;
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.landing-section > div {
+  max-width: 36rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.landing-section h1,
+.landing-section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  color: inherit;
+}
+
+.landing-section p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.95;
+  max-width: 32ch;
+}
+
+.landing-section--yellow {
+  background: var(--lt-yellow);
+  color: var(--lt-text);
+}
+
+.landing-section--red {
+  background: var(--lt-red);
+  color: #fff;
+}
+
+.landing-section--green {
+  background: var(--lt-green);
+  color: #fff;
+}
+
+/* =========================================
+   5. RESPONSIVIDADE DESKTOP (> 768px)
+   ========================================= */
+@media (min-width: 768px) {
+  .landing-wrapper {
+    flex-direction: row; /* Coloca Sidebar e Conteúdo lado a lado */
+  }
+
+  .landing-navbar-wrapper,
+  .landing-mobile-menu {
+    display: none; /* Some com a NavBar e o Menu Mobile */
+  }
+
+  .landing-sidebar-wrapper {
+    display: flex;
+    width: 260px; /* Largura fixa da SideBar */
+    height: 100vh;
+    position: sticky; /* Mantém a Sidebar fixa na tela enquanto o conteúdo rola */
+    top: 0;
+    border-right: 1px solid #e5e7eb;
+    background-color: #ffffff;
+  }
+
+  .landing-content {
+    margin-top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+}

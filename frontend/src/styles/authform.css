@@ -1,0 +1,48 @@
+/* 1. CONTAINER PRINCIPAL */
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px; /* Espaço estrutural entre cabeçalho, corpo e rodapé */
+  box-sizing: border-box;
+}
+
+/* 2. CABEÇALHO (Botões de Alternância/Tabs)*/
+.auth-form-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Uma borda inferior sutil pode ajudar a separar as abas do resto do form */
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e7eb; 
+}
+
+/* 3. CORPO (Campos de Input) */
+.auth-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* O espaço exato que empilha um Input em cima do outro com harmonia */
+  width: 100%;
+}
+
+/* 4. RODAPÉ (Botões de Ação) */
+.auth-form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 8px; /* Dá um respiro extra para separar visualmente do último input */
+}
+
+/* 5. RESPONSIVIDADE DESKTOP (> 768px)*/
+@media (min-width: 768px) {
+  .auth-form-container {
+    gap: 32px; /* Aumenta o respiro geral em telas maiores */
+  }
+
+  .auth-form-body {
+    gap: 20px; /* Campos levemente mais espaçados para melhor leitura no desktop */
+  }
+}

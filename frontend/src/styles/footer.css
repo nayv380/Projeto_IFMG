@@ -1,0 +1,87 @@
+/* 1. CONTAINER PRINCIPAL (Mobile First) */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 16px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb; /* Linha sutil separando o rodapé do resto da página */
+  width: 100%;
+  box-sizing: border-box;
+  color: #6b7280; /* Cor de texto neutra (cinza médio) */
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 2. SELETOR DE IDIOMA / BOTÕES DE TEXTO */
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* Espaçamento caso você insira mais de um botão de idioma */
+}
+
+/* DICA EXTRA: Como você vai usar palavras como botões, 
+  se você não tiver uma classe pronta para isso, pode usar algo assim 
+  no botão que for inserido no React:
+*/
+.footer-text-button {
+  background: none;
+  border: none;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.footer-text-button:hover {
+  color: #111827; /* Fica mais escuro ao passar o mouse */
+}
+
+/* 3. LINKS SECUNDÁRIOS (Termos, Privacidade, Suporte) */
+.footer-links-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Permite quebrar linha no celular se a tela for muito estreita */
+  justify-content: center;
+  align-items: center;
+  gap: 16px 24px; /* 16px de vão vertical, 24px de vão horizontal */
+}
+
+.footer-slot {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 4. COPYRIGHT */
+.footer-copyright {
+  font-size: 12px;
+  color: #9ca3af; /* Um pouco mais claro que o resto do texto */
+}
+
+/* 5. RESPONSIVIDADE DESKTOP (> 768px) */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row; /* Muda o empilhamento para lado a lado */
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espalha os itens pelas pontas */
+    text-align: left;
+    padding: 24px 32px;
+  }
+
+  /* Garante que o copyright fique na direita no desktop, ou alinhe conforme sua preferência */
+  .footer-copyright {
+    order: 3; 
+  }
+
+  .footer-nav {
+    order: 1;
+  }
+
+  .footer-links-group {
+    order: 2;
+  }
+}

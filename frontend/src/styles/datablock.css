@@ -1,0 +1,62 @@
+/* 1. CONTAINER PRINCIPAL (Lista de Descrição)*/
+.data-block-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline; /* Alinha os textos pela linha base da fonte */
+  padding: 12px 0;       /* Espaçamento vertical para não colar as linhas */
+  margin: 0;
+  gap: 16px;
+  border-bottom: 1px solid #f3f4f6; /* Linha divisória sutil padrão */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Remove a linha divisória do último item caso sejam empilhados */
+.data-block-container:last-child {
+  border-bottom: none;
+}
+
+/* 2. LABEL (O Termo / Título) */
+.data-block-label {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço para um possível ícone */
+  color: #6b7280; /* Cinza médio para não roubar atenção */
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  flex-shrink: 0; /* Impede que a label seja esmagada se a informação for longa */
+}
+
+/* Container de Ícone opcional ao lado da label */
+.data-block-icon {
+  display: inline-flex;
+  color: #9ca3af;
+}
+
+/* 3. INFORMAÇÃO (O Valor / Dado) */
+.data-block-info {
+  color: #111827; /* Preto chumbo para dar destaque ao dado real */
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  text-align: right;
+  word-break: break-word; /* Se for um link ou e-mail longo, ele quebra a linha sem estourar a tela */
+}
+
+/* 4. RESPONSIVIDADE MOBILE / TELAS PEQUENAS*/
+/* Caso a tela seja muito pequena (ex: celular em pé) e o dado for longo,
+   é melhor quebrar para coluna do que amassar os textos */
+@media (max-width: 480px) {
+  .data-block-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 0;
+  }
+
+  .data-block-info {
+    text-align: left; /* Alinha à esquerda já que agora está embaixo da label */
+  }
+}

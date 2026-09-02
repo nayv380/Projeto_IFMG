@@ -1,0 +1,85 @@
+/* 1. CONTAINER PRINCIPAL (Mobile First)*/
+.group-block-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.group-block-container--embedded {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Título do Grupo */
+.group-block-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+/* 2. ÁREA DE CONTEÚDO (Membros + Botão) */
+.group-block-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 3. ÁREA DE MEMBROS (Esquerda) */
+.group-block-members {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+  color: #6b7280;
+}
+
+/* Badge do Contador de Membros Extras (+3) */
+.group-block-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  border: 1px solid #e5e7eb;
+}
+
+/* 4. ÁREA DE AÇÃO (Direita) */
+.group-block-action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* 5. RESPONSIVIDADE DESKTOP (> 768px) */
+@media (min-width: 768px) {
+  .group-block-container:not(.group-block-container--embedded) {
+    padding: 20px;
+  }
+
+  .group-block-title {
+    font-size: 18px;
+  }
+
+  .group-block-content {
+    flex-wrap: nowrap;
+  }
+}

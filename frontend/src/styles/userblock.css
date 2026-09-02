@@ -1,0 +1,98 @@
+/* 1. CONTAINER PRINCIPAL */
+.user-block-container {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent; /* Permite se adaptar ao fundo onde for inserido */
+}
+
+/* Textos Globais */
+.user-block-username {
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.user-block-skill {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* 2. VARIANTE: ROW (Header de Post)*/
+.user-block--row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+/* Agrupa o Avatar e os Textos na esquerda */
+.user-block--row .user-block-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Empilha o Nome e a Skill ao lado do Avatar */
+.user-block--row .user-block-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.user-block--row .user-block-username {
+  font-size: 16px;
+}
+
+/* Truque para travar o tamanho do avatar injetado nesta variante */
+.user-block--row .user-block-avatar > * {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 3. VARIANTE: COLUMN (Página de Perfil)*/
+.user-block--column {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 16px; /* Mais espaçamento para respirar na página */
+  gap: 24px;          /* Espaço entre a foto/textos e o botão de ação */
+}
+
+/* Agrupa tudo no centro */
+.user-block--column .user-block-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Centraliza os textos */
+.user-block--column .user-block-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-block--column .user-block-username {
+  font-size: 24px; /* Nome bem maior no perfil */
+}
+
+.user-block--column .user-block-skill {
+  font-size: 16px;
+}
+
+/* Truque para aumentar o avatar injetado na variante de perfil */
+.user-block--column .user-block-avatar > * {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}

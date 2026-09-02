@@ -1,0 +1,70 @@
+.activities-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.activities-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activities-page-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--lt-radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.activities-page-banner-warning {
+  background: rgba(245, 197, 24, 0.18);
+  color: #8a6d00;
+}
+
+.activities-page-banner-error {
+  background: var(--lt-danger-bg);
+  color: var(--lt-red-dark);
+}
+
+.activities-page-loading,
+.activities-page-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 48px 16px;
+  color: var(--lt-text-muted);
+  text-align: center;
+}
+
+.activities-page-empty p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Mobile-first: uma coluna, cards empilhados (ver mockup "Activities & Score") */
+.activities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Tablet: 2 colunas */
+@media (min-width: 640px) {
+  .activities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 colunas, mais espaçamento */
+@media (min-width: 1100px) {
+  .activities-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}

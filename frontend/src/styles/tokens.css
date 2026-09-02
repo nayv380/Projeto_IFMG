@@ -1,0 +1,27 @@
+/* LATINATON design tokens — amarillo / rojo / verde */
+:root {
+  --lt-yellow: #f5c518;
+  --lt-yellow-hover: #e0b200;
+  --lt-red: #c00021;
+  --lt-red-dark: #9a001a;
+  --lt-green: #009944;
+  --lt-green-dark: #007a36;
+  --lt-navy: #1a2744;
+
+  --lt-bg: #f7f5f0;
+  --lt-surface: #ffffff;
+  --lt-border: #e5e2da;
+  --lt-text: #1a1a1a;
+  --lt-text-muted: #5c5c5c;
+  --lt-danger: #c00021;
+  --lt-danger-bg: #fdf0f2;
+  --lt-success: #009944;
+  --lt-success-bg: #eef8f2;
+
+  --lt-radius: 12px;
+  --lt-radius-sm: 8px;
+  --lt-radius-pill: 999px;
+  --lt-shadow: 0 8px 28px rgba(26, 39, 68, 0.08);
+  --lt-font: 'DM Sans', system-ui, sans-serif;
+  --lt-font-display: 'Space Grotesk', 'DM Sans', system-ui, sans-serif;
+}

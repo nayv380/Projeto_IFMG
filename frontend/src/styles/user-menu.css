@@ -1,0 +1,117 @@
+.user-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.user-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--lt-text);
+  transition: opacity 0.15s ease;
+}
+
+.user-menu-trigger:hover,
+.user-menu-trigger[aria-expanded='true'] {
+  border: none;
+  box-shadow: none;
+  opacity: 0.85;
+}
+
+.user-menu-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lt-yellow), var(--lt-red) 55%, var(--lt-green));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-menu-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  max-width: 7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 0.25rem;
+}
+
+.user-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: min(280px, calc(100vw - 2rem));
+  background: var(--lt-surface);
+  border: 1px solid var(--lt-border);
+  border-radius: var(--lt-radius);
+  box-shadow: var(--lt-shadow);
+  z-index: 50;
+  overflow: hidden;
+  animation: userMenuIn 0.14s ease;
+}
+
+.user-menu-header {
+  padding: 1rem 1rem 0.85rem;
+  border-bottom: 1px solid var(--lt-border);
+}
+
+.user-menu-header-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.user-menu-header-handle {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--lt-green-dark);
+}
+
+.user-menu-header-email,
+.user-menu-header-meta {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  color: var(--lt-text-muted);
+  word-break: break-word;
+}
+
+.user-menu-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.85rem;
+}
+
+.user-menu-actions .btn-global {
+  width: 100%;
+}
+
+@keyframes userMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .user-menu-name {
+    display: none;
+  }
+}
